@@ -1,0 +1,235 @@
+1.git init
+
+2. git add filename.extension
+
+3.git rm  --cached filename.extension /// ye staging area se working area me le jata hai
+
+4. git commit  -m  " commit ke liye kuchhh bhi message de sakete hai"
+
+%5. git Status
+
+//gitignore me likh denge jis file co track na  karna ho
+
+.gitignore
+       dialoge.txt
+src file ke andar ka css file agar ignore karna ho to
+    
+     src/*.css
+****
+**** Commit stage ko pichhe karta hai
+****
+1.git reset --soft  //HEAD~1 latest commit ko 1 stage pichhe wale pe lejata hai
+
+2.git reset --mixed  // HEAD~2  ye commited area se directly
+
+3.git reset --hard //HEAD~3 ye file ko hamesa ke liye delete kar deta hai
+
+*****
+git log --oneline /// ye hash code  ya commit id nikalne ke liye use karte hai 
+*****
+
+
+****
+git rest --hard (commit id) ///esse  (git reset --hard)  command se delete huye code ko wapas lane ke liye karte hai 
+****
+
+git restore ID
+
+
+#### 
+How to edit most recent comment:
+
+1. git commit --amend  -m  "message name/commit name" (agar nya message ke sath commit karna hai to ye command use kare)
+
+1. git commit --amend --no-edit ( agar same message ke sath commit karna hai to)
+
+
+####
+####
+How to check number of commits in a branch?
+
+1. git log (use kare sabhi history commit ka batayega) esse  bahar aaneke liye (esc:wq)click karna parega
+
+2. git log --oneline (sirf commit batayega)
+
+
+
+*******
+BRANCHING:
+*******
+
+Q.HOW TO RENAME MASTER (MAIN) BRANCH?
+
+1. git branch -m  ( branch_name)--> small letter me likhna hai
+
+2.git branch -M ( branch_name)--> small letter me likhna hai (eska use forcefully change karne ke liye karte hai)
+
+
+
+Q.HOW TO CREATE A BRANCH?
+
+1. git branch (BRANCH NAME)--> FEATURE/NAVBAR JAISE HO SAKTA HAI
+
+Q. HOW TO CHECK BRANCH IS CREATED OR NOT?
+
+1. git branch
+
+Q. TO MOVE FROM ONE BRANCH TO OTHER BRANCH
+
+1. git switch  (feature 123 /navbar)
+
+Q.TO MERGE A BRANCH:-
+
+1. git merge (branch-name)
+
+
+Q. DELETE A BRANCH
+
+1. git branch -d (feature 123 /navbar)
+
+///head hamesa current branch me rahta hai
+
+git branch -b (branch name)----> ham kis branch me hai check karn ke liye karte hai
+
+Q. TYPES OF MERGE
+
+1. FAST FORWARD MERGE ---> git branch -d (branch name)
+2.THREE WAY MERGE  ---> git merge (branch name) 
+3.REBASE MERGE
+
+stp1---->git rebase [main_branch ka name][branch name]  ((jis branch ko rebase karna hai usme jakar ke karna hoga //eska use branch ko last /aage  me put/merge karne ke liye karte hai))
+
+// stp--2>  git merge branch_name ---->likhna 
+
+stp---3> git branch -d branch_name --->us branch ka delete karna hoga use nahi hai to
+
+
+4.SQUASHING MERGE
+
+
+
+###
+###
+WAYS TO MERGE A BRANCH
+
+1. FAST FORWARD BRANCH
+
+2.THREE WAY MERGE
+
+
+*******
+*******
+GITHUB ----> EXTENSION IS --> .git
+******
+******
+1. git remote add origin [ urL]-->https://github.com/Sonurocks/Project-Ai
+
+  *** git remote  ---> 
+  *** git remote -v --->
+
+
+**rename karne ke liye --->git remote rename <old name> <new name>
+
+** remove karne ke liye ---> git remote remove origin  
+
+** git push -u origin main ---> push karne ke liye karte hai github pe local/pc me hai jise upload karte hai
+
+** git puLL  origin main ----> se ham github ke changes ko local file me update karte hai
+
+
+
+*** clone [github code link]
+
+
+
+//*************************//
+ ******HangingPanda********
+
+step 1--->
+      cd git_tutorial 
+step 2--->
+       git init
+step 3--->
+        git add .
+step 4--->
+        git commit -m "initial commit"
+step 5--->
+        git remote add origin https://github.com/Sonurocks007/git_tutorial.git
+step 6--->
+        git branch -M main
+step 7--->
+        git push -u origin main
+step 7--->
+        git push
+
+******* git cloning ******
+         git clone {{git_url}}
+
+******* add configutration ******
+           git config user.name <username>
+           git config user.email <email>
+
+*****Git Branch*****
+      step 1---> git branch <new branch name>
+      step 2---> git switch <branch name>
+      step 3---> git branch -d <branch name> ### for deleting branch
+
+
+*********
+stash---->git stash is used to temporarily save your uncommitted changes (both staged and unstaged) in Git without committing them.
+pop---->
+rebase---> in which branch you want to merge switch in that branch after merge branch in which after or before you want to merge
+ssh--->
+ssh key generation
+ssh agent creation
+conflict change globally
+
+
+******ssh key generation steps*******
+      CHECK folder is exists or not --->ls -larths
+      step 1----> mkdir .ssh
+      STEP 2----> to creae keys in .ssh file -->ssh-keygen -t ed25519 -C "sonubgupta.hp@gmail.com"
+
+*******ssh agent creation******
+      
+*****stash********
+--->git stash is used to temporarily save your uncommitted changes (both staged and unstaged) in Git without committing them.
+
+########## git stash command ########
+
+   git stash: stash the uncommitted changes
+   git stash list: show all the stashes
+   git stash apply: apply the top stash
+   git stash apply n:
+   git stash apply stash@{n}
+   git stash pop is git stash apply & git stash drop
+   git stash drop
+   git stash clear
+
+#####Converting multiple commits into single commit######
+git reset --soft HEAD~5
+git commit -m "new commit message"
+git push -f
+
+#####Converting multiple commits into single commit######
+git rebase -i HEAD~4
+git push origin main --force-with-lease
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
